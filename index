@@ -74,7 +74,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
   <h1>Santander Renting</h1>
 </header>
 
-<form id="fieraForm" method="POST" action="https://script.google.com/macros/s/AKfycbz3J9j0V2WtMQHiLW6sl2gK4GUpyTiNeLSZ5CWeG9Su4fOPi7tOM42xS3BG9WuGfJcA/exec" autocomplete="off" novalidate>
+<form id="fieraForm" method="POST" action="https://script.google.com/macros/s/AKfycbwmqrKFhcRSEToV-yt3fA50Ht4mFPD5PNBrmaKa8AVWK5t8BzaZbV5A7pkMtyBFfEum/exec" autocomplete="off" novalidate>
   <div class="row-note">
     <p class="hint">* I campi contrassegnati con asterisco sono obbligatori.</p>
   </div>
