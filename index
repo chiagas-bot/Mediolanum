@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Santander Renting</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --santander-red:#EA1D25; --text:#1a1a1a; --bg:#fff; --card:#f9f9f9;
+  --muted:#6b7280; --radius:12px; --shadow:0 2px 12px rgba(0,0,0,.08);
+  --border-gray:#cccccc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);padding:20px}
+.container{max-width:640px;margin:auto}
+header{text-align:center;margin-bottom:24px}
+header img{max-width:300px;margin-bottom:10px}
+h1{font-size:24px;font-weight:700;color:var(--santander-red)}
+
+form{
+  background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
+  display:grid;gap:12px;
+}
+label{font-weight:600;margin-bottom:2px;display:block}
+input:not([type="checkbox"]):not([type="radio"]),
+select, textarea{
+  width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px;
+}
+textarea{min-height:100px;resize:vertical}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.grid-2{grid-template-columns:1fr}}
+
+.reason-box{
+  background:#fff;border:1px solid var(--border-gray);border-radius:var(--radius);
+  padding:16px;box-shadow:var(--shadow);text-align:left;
+}
+.reason-list{display:flex;flex-direction:column;gap:8px}
+.reason{display:inline-flex;align-items:center;gap:10px;font-weight:400;color:var(--text)}
+.reason input[type="checkbox"]{margin:0;width:auto;height:auto}
+.reason span{display:inline-block}
+
+.consent{
+  background:#f5f5f5;border:1px solid var(--border-gray);
+  padding:12px 16px;border-radius:12px;
+  display:grid;grid-template-columns:20px 1fr;align-items:start;gap:10px;line-height:1.4
+}
+.consent input[type="checkbox"]{margin-top:2px;width:auto;height:auto}
+.consent label{margin:0;font-weight:400;font-size:14px;color:var(--text);display:block}
+.consent a{color:var(--santander-red);text-decoration:none}
+.consent a:hover{text-decoration:underline}
+
+button{
+  background:var(--santander-red);color:#fff;border:none;padding:14px;border-radius:30px;
+  font-weight:700;font-size:16px;cursor:pointer;transition:background .3s ease
+}
+button:hover{background:#c3001f}
+button:disabled{opacity:.5;cursor:not-allowed}
+.hint{font-size:12px;color:var(--muted)}
+.success{color:#065f46}
+.error{color:#b91c1c}
+
+.row-note {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -8px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <img src="logo.png" alt="Santander Renting Logo">
+  <h1>Santander Renting</h1>
+</header>
+
+<form id="fieraForm" method="POST" action="https://script.google.com/macros/s/AKfycbz3J9j0V2WtMQHiLW6sl2gK4GUpyTiNeLSZ5CWeG9Su4fOPi7tOM42xS3BG9WuGfJcA/exec" autocomplete="off" novalidate>
+  <div class="row-note">
+    <p class="hint">* I campi contrassegnati con asterisco sono obbligatori.</p>
+  </div>
+
+  <label>Codice Agente *</label>
+  <input name="organization" required placeholder="Es. #1223">
+
+  <div class="grid-2">
+    <div>
+      <label>Nome e Cognome</label>
+      <input name="contact_name" required placeholder="Nome e Cognome">
+    </div>
+    <div>
+      <label>Cfferta di Noleggio</label>
+      <input name="job_title" placeholder="Nissan Juke ">
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <label>Email Cliente *</label>
+      <input name="email" type="email" required placeholder="nome@azienda.it">
+    </div>
+    <div>
+      <label>Cellulare Cliente *</label>
+      <input name="tel" required placeholder="+39 …">
+    </div>
+  </div>
+
+   <label>Regione (Sede) *</label>
+  <select name="region" required>
+    <option value="" disabled selected>Seleziona…</option>
+    <option>Abruzzo</option><option>Basilicata</option><option>Calabria</option>
+    <option>Campania</option><option>Emilia-Romagna</option><option>Friuli-Venezia Giulia</option>
+    <option>Lazio</option><option>Liguria</option><option>Lombardia</option>
+    <option>Marche</option><option>Molise</option><option>Piemonte</option>
+    <option>Puglia</option><option>Sardegna</option><option>Sicilia</option>
+    <option>Toscana</option><option>Trentino-Alto Adige</option><option>Umbria</option>
+    <option>Valle d'Aosta</option><option>Veneto</option>
+  </select>
+
+  <label>Info Aggiuntive</label>
+  <textarea name="notes" placeholder="Scrivi qui eventuali informazioni utili…"></textarea>
+
+  <div class="consent">
+    <input type="checkbox" id="consenso" required>
+    <label for="consenso">
+      Dichiaro di aver letto l’<a target="_blank" href="https://www.santanderrenting.it/uploads/Informativa-privacy-clienti-prospect.pdf">Informativa Privacy</a> e di acconsentire al trattamento dei dati personali.
+    </label>
+  </div>
+
+  <button id="submitBtn" type="submit" disabled>Invia richiesta</button>
+  <p id="feedback" class="hint" aria-live="polite"></p>
+</form>
+</div>
+
+<script>
+const form = document.getElementById('fieraForm');
+const submitBtn = document.getElementById('submitBtn');
+const consent = document.getElementById('consenso');
+const feedback = document.getElementById('feedback');
+
+consent.addEventListener('change', () => {
+  submitBtn.disabled = !consent.checked;
+});
+
+function hasReason() {
+  return !!form.querySelector('input[name="interest_reason[]"]:checked');
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  feedback.textContent = '';
+
+  if (!form.checkValidity() || !hasReason()) {
+    feedback.textContent = 'Compila i campi obbligatori e seleziona almeno un motivo.';
+    feedback.className = 'error';
+    return;
+  }
+
+  const fd = new FormData(form);
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: fd });
+    if (res.ok) {
+      feedback.textContent = 'Grazie! La richiesta è stata inviata correttamente.';
+      feedback.className = 'success';
+      form.reset();
+      submitBtn.disabled = true;
+    } else {
+      throw new Error('HTTP ' + res.status);
+    }
+  } catch (err) {
+    feedback.textContent = 'Invio non riuscito. Controlla URL /exec e permessi.';
+    feedback.className = 'error';
+  }
+});
+</script>
+</body>
+</html>
