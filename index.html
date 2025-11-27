@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,25 +9,22 @@
 <style>
 :root {
   --santander-red:#EA1D25; --text:#1a1a1a; --bg:#fff; --card:#f9f9f9;
-  --muted:#6b7280; --radius:12px; --shadow:0 2px 12px rgba(0,0,0,.08);}
+  --muted:#6b7280; --radius:12px; --shadow:0 2px 12px rgba(0,0,0,.08);
+}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Open Sans',sans-serif;background:var(--bg);color:var(--text);padding:20px}
 .container{max-width:720px;margin:auto}
 header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
-header img{max-height:80px}
+header img{width:auto}
+.logo-mediolanum{max-height:50px} /* Mediolanum più piccolo */
+.logo-santander{max-height:80px} /* Santander più grande */
 h1{text-align:center;font-size:24px;font-weight:700;color:var(--santander-red);margin-top:10px}
-
-label {
-  font-weight: 600;
-  margin-bottom: 2px; /* invece di 4px */
-  display: block;
-}
 
 form{
   background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);
-  display:grid;gap:16px;
+  display:grid;gap:12px; /* ridotto gap */
 }
-label{font-weight:600;margin-bottom:4px;display:block}
+label{font-weight:600;margin-bottom:2px;display:block}
 input:not([type="checkbox"]), select, textarea{
   width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px;
 }
@@ -56,13 +54,8 @@ button:disabled{opacity:.5;cursor:not-allowed}
 <body>
 <div class="container">
 <header>
-  <img src="Logo_Gruppo_Mediolanum1.jpg" alt="Logo Mediolanum">
-  <img src="FA_SANTANDER_RENTING_CV_POS_RGB.png" alt="Logo Santander Renting">
-  
-.logo-mediolanum {
-  max-height: 50px; /* riduce l’altezza */
-  width: auto;      /* mantiene proporzioni */
-
+  <img src="Logo_Gruppo_Mediolanum1.jpg" alt="Logo Mediolanum" class="logo-mediolanum">
+  <img src="FA_SANTANDER_RENTING_CV_POS_RGB.png" alt="Logo Santander Renting" class="logo-santander">
 </header>
 <h1>Richiesta Offerta Noleggio</h1>
 
@@ -98,7 +91,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
     </div>
   </div>
 
-  <label for="region"> Regione (Sede) *</label>
+  <label for="region">Regione (Sede) *</label>
   <select id="region" name="region" required>
     <option value="" disabled selected>Seleziona…</option>
     <option>Abruzzo</option><option>Basilicata</option><option>Calabria</option>
@@ -161,3 +154,4 @@ form.addEventListener('submit', async (e) => {
 });
 </script>
 </body>
+</html>
