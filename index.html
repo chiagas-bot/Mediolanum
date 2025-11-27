@@ -136,3 +136,23 @@ form.addEventListener('submit', async (e) => {
     feedback.textContent = 'Compila tutti i campi obbligatori.';
     feedback.className = 'error';
     return;
+  }
+  const fd = new FormData(form);
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: fd });
+    if (res.ok) {
+      feedback.textContent = 'Grazie! La richiesta è stata inviata correttamente.';
+      feedback.className = 'success';
+      form.reset();
+      submitBtn.disabled = true;
+    } else {
+      throw new Error('HTTP ' + res.status);
+    }
+  } catch (err) {
+    feedback.textContent = 'Invio non riuscito. Controlla URL /exec e permessi.';
+    feedback.className = 'error';
+  }
+});
+</script>
+</body>
+</html>
