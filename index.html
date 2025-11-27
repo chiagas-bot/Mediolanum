@@ -29,6 +29,7 @@ input:not([type="checkbox"]), select, textarea{
   width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px;
 }
 textarea{min-height:100px;resize:vertical}
+select option[disabled]{color:#6b7280;} /* Placeholder grigio */
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:640px){.grid-2{grid-template-columns:1fr}}
 
@@ -54,12 +55,12 @@ button:disabled{opacity:.5;cursor:not-allowed}
 <body>
 <div class="container">
 <header>
-  <img src="Logo_Gruppo_Mediolanum1.jpg" alt="Logo Mediolanum" class="logo-mediolanum">
-  <img src="FA_SANTANDER_RENTING_CV_POS_RGB.png" alt="Logo Santander Renting" class="logo-santander">
+  Logo_Gruppo_Mediolanum1.jpg
+  FA_SANTANDER_RENTING_CV_POS_RGB.png
 </header>
 <h1>Richiesta Offerta Noleggio</h1>
 
-<form id="Mediolanum" method="POST" action="https://script.google.com/macros/s/AKfycbwmqrKFhcRSEToV-yt3fA50Ht4mFPD5PNBrmaKa8AVWK5t8BzaZbV5A7pkMtyBFfEum/exec" autocomplete="off">
+https://script.google.com/macros/s/AKfycbwmqrKFhcRSEToV-yt3fA50Ht4mFPD5PNBrmaKa8AVWK5t8BzaZbV5A7pkMtyBFfEum/exec
   <div class="row-note">* I campi contrassegnati con asterisco sono obbligatori.</div>
 
   <label for="organization">Codice Agente *</label>
@@ -109,7 +110,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
   <div class="consent">
     <input type="checkbox" id="consenso" required>
     <label for="consenso">
-      Dichiaro di aver letto l’<a target="_blank" href="https://www.santanderrenting.it/uploads/Informativa-privacy-clienti-prospect.pdf">Informativa Privacy</a> e di acconsentire al trattamento dei dati personali.
+      Dichiaro di aver letto l’https://www.santanderrenting.it/uploads/Informativa-privacy-clienti-prospect.pdfInformativa Privacy</a> e di acconsentire al trattamento dei dati personali.
     </label>
   </div>
 
