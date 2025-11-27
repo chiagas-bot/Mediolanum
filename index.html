@@ -76,8 +76,6 @@ button:disabled{opacity:.5;cursor:not-allowed}
   <img src="FA_SANTANDER_RENTING_CV_POS_RGB.png" alt="Logo Santander Renting" style="max-height:80px;">
 </header>
 
-
-
 <form id="fieraForm" method="POST" action="https://script.google.com/macros/s/AKfycbwmqrKFhcRSEToV-yt3fA50Ht4mFPD5PNBrmaKa8AVWK5t8BzaZbV5A7pkMtyBFfEum/exec" autocomplete="off" novalidate>
   <div class="row-note">
     <p class="hint">* I campi contrassegnati con asterisco sono obbligatori.</p>
@@ -91,11 +89,13 @@ button:disabled{opacity:.5;cursor:not-allowed}
       <label>Nome e Cognome</label>
       <input name="contact_name" required placeholder="Nome e Cognome">
     </div>
-    <div>
-      <label>Offerta di Noleggio</label>
-      <input name="job_title" placeholder="Nissan Juke ">
-    </div>
-  </div>
+
+    <label> Offerta Di Noleggio* </label>
+  <select name="Offerta" required>
+    <option value="" disabled selected>Seleziona…</option>
+    <option>Peugeot 208</option><option>Nissan Juke</option><option>Audi Q8</option>
+    <option>Opel Corsa</option><option>Fiat Panda</option>
+  </select>
 
   <div class="grid-2">
     <div>
