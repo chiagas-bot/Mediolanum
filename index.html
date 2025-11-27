@@ -30,6 +30,11 @@ input:not([type="checkbox"]), select, textarea{
 }
 textarea{min-height:100px;resize:vertical}
 select option[disabled]{color:#6b7280;} /* Placeholder grigio */
+  
+select:invalid {
+  color: #6b7280; /* grigio quando è selezionata l'opzione vuota */
+}
+
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:640px){.grid-2{grid-template-columns:1fr}}
 
