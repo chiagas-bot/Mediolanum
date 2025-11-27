@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -28,11 +29,8 @@ input:not([type="checkbox"]), select, textarea{
   width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px;
 }
 textarea{min-height:100px;resize:vertical}
-select option[disabled]{color:#6b7280;} /* Placeholder grigio */
-  
-select:invalid {
-  color: #6b7280; /* grigio quando è selezionata l'opzione vuota */
-}
+select option[disabled]{color:#6b7280;}
+select:invalid {color:#6b7280;}
 
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:640px){.grid-2{grid-template-columns:1fr}}
@@ -64,7 +62,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
 </header>
 <h1>Richiesta Offerta Noleggio</h1>
 
-<form id="Mediolanum" method="POST" action="https://script.google.com/macros/s/AKfycbzg79b6r-75hBhf-mYAgC5sOvxL_ObvQrsZNw-iKlLjzPyVa2WSIxSs995IsWTXpGEPBA/exec" autocomplete="off">
+<form id="Mediolanum" method="POST" action="https://script.google.com/macros/s/AKfycbz9oPmuudJUXsSjDilUIRwjSGRZEuSB1y_beo6SmZ4fegigNEGUrXMBl0dsC66lNog4Ig/exec" autocomplete="off">
   <div class="row-note">* I campi contrassegnati con asterisco sono obbligatori.</div>
 
   <label for="organization">Codice Agente *</label>
@@ -123,6 +121,7 @@ button:disabled{opacity:.5;cursor:not-allowed}
 </form>
 </div>
 
+<!-- Inserisci questo script alla fine del file HTML -->
 <script>
 const form = document.getElementById('Mediolanum');
 const submitBtn = document.getElementById('submitBtn');
@@ -141,9 +140,17 @@ form.addEventListener('submit', async (e) => {
     feedback.className = 'error';
     return;
   }
-  const fd = new FormData(form);
+
+  // Converti i dati in formato leggibile da Apps Script
+  const fd = new URLSearchParams(new FormData(form));
+
   try {
-    const res = await fetch(form.action, { method: 'POST', body: fd });
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: fd,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    });
+
     if (res.ok) {
       feedback.textContent = 'Grazie! La richiesta è stata inviata correttamente.';
       feedback.className = 'success';
