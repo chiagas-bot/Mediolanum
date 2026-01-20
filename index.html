@@ -1,12 +1,12 @@
 
-<!DOCTYPE html>
-<html lang="it">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Santander Renting | Mediolanum</title>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="it"&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;title&gt;Santander Renting | Mediolanum&lt;/title&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"&gt;
+&lt;style&gt;
 :root {
   --santander-red:#EA1D25; --text:#1a1a1a; --bg:#fff; --card:#f9f9f9;
   --muted:#6b7280; --radius:12px; --shadow:0 2px 12px rgba(0,0,0,.08);
@@ -52,108 +52,84 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .success{color:#065f46}
 .error{color:#b91c1c}
 .row-note{text-align:right;font-size:12px;color:var(--muted)}
-</style>
-</head>
-<body>
-<div class="container">
-<header>
-  <img src="Logo_Gruppo_Mediolanum1.jpg" alt="Logo Mediolanum" class="logo-mediolanum">
-  <img src="FA_SANTANDER_RENTING_CV_POS_RGB.png" alt="Logo Santander Renting" class="logo-santander">
-</header>
-<h1>Richiesta Offerta Noleggio</h1>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="container"&gt;
+&lt;header&gt;
+  &lt;img src="Logo_Gruppo_Mediolanum1.jpg" alt="Logo Mediolanum" class="logo-mediolanum"&gt;
+  &lt;img src="FA_SANTANDER_RENTING_CV_POS_RGB.png" alt="Logo Santander Renting" class="logo-santander"&gt;
+&lt;/header&gt;
+&lt;h1&gt;Richiesta Offerta Noleggio&lt;/h1&gt;
 
-<form id="Mediolanum" method="POST" action="https://script.google.com/macros/s/AKfycbx0Y54xiq1jzfXw16vt_jHc7s8L3xixDw3vawy7vQ_1JidAV_ChOUUovYand8Fb1EyRcg/exec" autocomplete="off">
-  <div class="row-note">* I campi contrassegnati con asterisco sono obbligatori.</div>
+&lt;form id="Mediolanum" method="POST" action="https://script.google.com/macros/s/AKfycbx0Y54xiq1jzfXw16vt_jHc7s8L3xixDw3vawy7vQ_1JidAV_ChOUUovYand8Fb1EyRcg/exec" autocomplete="off"&gt;
+  &lt;div class="row-note"&gt;* I campi contrassegnati con asterisco sono obbligatori.&lt;/div&gt;
 
+  &lt;div class="grid-2"&gt;
+    &lt;div&gt;
+      &lt;label for="contact_name"&gt;Nome e Cognome *&lt;/label&gt;
+      &lt;input id="contact_name" name="contact_name" required placeholder="Nome e Cognome"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="offerta"&gt;Offerta di Noleggio *&lt;/label&gt;
+      &lt;select id="offerta" name="Offerta" required&gt;
+        &lt;option value="" disabled selected&gt;Seleziona…&lt;/option&gt;
+        &lt;option&gt;Peugeot 208&lt;/option&gt;&lt;option&gt;Nissan Juke&lt;/option&gt;&lt;option&gt;Audi Q8&lt;/option&gt;
+        &lt;option&gt;Opel Corsa&lt;/option&gt;&lt;option&gt;Fiat Panda&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
-<div class="grid-2">
-  <div>
-    <label for="contact_name">Nome e Cognome *</label>
-    <input id="contact_name" name="contact_name" required placeholder="Nome e Cognome">
-  </div>
+  &lt;div class="grid-2"&gt;
+    &lt;div&gt;
+      &lt;label for="email"&gt;Email Cliente *&lt;/label&gt;
+      &lt;input id="email" name="email" type="email" required placeholder="nome@azienda.it"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;label for="tel"&gt;Cellulare Cliente *&lt;/label&gt;
+      &lt;input id="tel" name="tel" required placeholder="+39 …"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 
- 
+  &lt;label for="region"&gt;Regione (Sede) *&lt;/label&gt;
+  &lt;select id="region" name="region" required&gt;
+    &lt;option value="" disabled selected&gt;Seleziona…&lt;/option&gt;
+    &lt;option&gt;Abruzzo&lt;/option&gt;&lt;option&gt;Basilicata&lt;/option&gt;&lt;option&gt;Calabria&lt;/option&gt;
+    &lt;option&gt;Campania&lt;/option&gt;&lt;option&gt;Emilia-Romagna&lt;/option&gt;&lt;option&gt;Friuli-Venezia Giulia&lt;/option&gt;
+    &lt;option&gt;Lazio&lt;/option&gt;&lt;option&gt;Liguria&lt;/option&gt;&lt;option&gt;Lombardia&lt;/option&gt;
+    &lt;option&gt;Marche&lt;/option&gt;&lt;option&gt;Molise&lt;/option&gt;&lt;option&gt;Piemonte&lt;/option&gt;
+    &lt;option&gt;Puglia&lt;/option&gt;&lt;option&gt;Sardegna&lt;/option&gt;&lt;option&gt;Sicilia&lt;/option&gt;
+    &lt;option&gt;Toscana&lt;/option&gt;&lt;option&gt;Trentino-Alto Adige&lt;/option&gt;&lt;option&gt;Umbria&lt;/option&gt;
+    &lt;option&gt;Valle d'Aosta&lt;/option&gt;&lt;option&gt;Veneto&lt;/option&gt;
+  &lt;/select&gt;
 
-<div class="grid-2">
-  <div>
-    <label for="contact_name">Nome e Cognome *</label>
-    <input id="contact_name" name="contact_name" required placeholder="Nome e Cognome">
-  </div>
+  &lt;label for="notes"&gt;Info Aggiuntive&lt;/label&gt;
+  &lt;textarea id="notes" name="notes" placeholder="Scrivi qui eventuali informazioni utili…"&gt;&lt;/textarea&gt;
 
-  
-<div class="grid-2">
-  <div>
-    <label for="contact_name">Nome e Cognome *</label>
-    <input id="contact_name" name="contact_name" required placeholder="Nome e Cognome">
-  </div>
- 
-<select id="offerta" name="Offerta" required>
-  <option value="" disabled selected>Seleziona…</option>
-  <option>FIAT PANDA 1.0 firefly hybrid Pop s&amp;s 70cv</option>
-  <option>NISSAN JUKE 1.0 DIG-T 114 Acenta Mt</option>
-  <option>CITROEN C3 AIRCROSS Turbo 100 cv Manuale YOU</option>
-  <option>MAZDA 2 1.5 vvt full hybrid electric Prime Line e-cvt</option>
-  <option>HYUNDAI TUCSON 1.6 crdi 48V Exellence 2wd dct</option>
-  <option>NISSAN X-TRAIL 1.5 MHEV Acenta CVT</option>
-  <option>BMW X1sdrive18d auto</option>
-  <option>BMW X6 xdrive30d Msport auto</option>
-  <option>MAZDA CX-60 3.3L e-SKYACTIV MHEV Excl. Line Auto</option>
-  <option>BMW X3 xDrive 20d</option>
-  <option>AUDI Nuovo Q5 Sportback TDI 150kW quattro S tronic Business Advanced</option>
-  <option>LEXUS Nuovo RX 350h Premium Hybrid Executive MY24</option>
-</select>
+  &lt;div class="consent"&gt;
+    &lt;input type="checkbox" id="consenso" required&gt;
+    &lt;label for="consenso"&gt;
+      Dichiaro di aver letto l’&lt;a href="https://www.santanderrenting.it/uploads/Informativa-privacy-clienti-prospect.pdf" target="_blank"&gt;Informativa Privacy&lt;/a&gt; e di acconsentire al trattamento dei dati personali.
+    &lt;/label&gt;
+  &lt;/div&gt;
 
+  &lt;button id="submitBtn" type="submit" disabled&gt;Invia richiesta&lt;/button&gt;
+  &lt;p id="feedback" class="hint" aria-live="polite"&gt;&lt;/p&gt;
+&lt;/form&gt;
+&lt;/div&gt;
 
-  <div class="grid-2">
-    <div>
-      <label for="email">Email Cliente *</label>
-      <input id="email" name="email" type="email" required placeholder="nome@azienda.it">
-    </div>
-    <div>
-      <label for="tel">Cellulare Cliente *</label>
-      <input id="tel" name="tel" required placeholder="+39 …">
-    </div>
-  </div>
-
-  <label for="region">Regione (Sede) *</label>
-  <select id="region" name="region" required>
-    <option value="" disabled selected>Seleziona…</option>
-    <option>Abruzzo</option><option>Basilicata</option><option>Calabria</option>
-    <option>Campania</option><option>Emilia-Romagna</option><option>Friuli-Venezia Giulia</option>
-    <option>Lazio</option><option>Liguria</option><option>Lombardia</option>
-    <option>Marche</option><option>Molise</option><option>Piemonte</option>
-    <option>Puglia</option><option>Sardegna</option><option>Sicilia</option>
-    <option>Toscana</option><option>Trentino-Alto Adige</option><option>Umbria</option>
-    <option>Valle d'Aosta</option><option>Veneto</option>
-  </select>
-
-  <label for="notes">Info Aggiuntive</label>
-  <textarea id="notes" name="notes" placeholder="Scrivi qui eventuali informazioni utili…"></textarea>
-
-  <div class="consent">
-    <input type="checkbox" id="consenso" required>
-    <label for="consenso">
-      Dichiaro di aver letto l’<a href="https://www.santanderrenting.it/uploads/Informativa-privacy-clienti-prospect.pdf" target="_blank">Informativa Privacy</a> e di acconsentire al trattamento dei dati personali.
-    </label>
-  </div>
-
-  <button id="submitBtn" type="submit" disabled>Invia richiesta</button>
-  <p id="feedback" class="hint" aria-live="polite"></p>
-</form>
-</div>
-
-<!-- Inserisci questo script alla fine del file HTML -->
-<script>
+&lt;!-- Inserisci questo script alla fine del file HTML --&gt;
+&lt;script&gt;
 const form = document.getElementById('Mediolanum');
 const submitBtn = document.getElementById('submitBtn');
 const consent = document.getElementById('consenso');
 const feedback = document.getElementById('feedback');
 
-consent.addEventListener('change', () => {
+consent.addEventListener('change', () =&gt; {
   submitBtn.disabled = !consent.checked;
 });
 
-form.addEventListener('submit', async (e) => {
+form.addEventListener('submit', async (e) =&gt; {
   e.preventDefault();
   feedback.textContent = '';
   if (!form.checkValidity()) {
@@ -185,6 +161,6 @@ form.addEventListener('submit', async (e) => {
     feedback.className = 'error';
   }
 });
-</script>
-</body>
-</html>
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
